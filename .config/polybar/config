@@ -1,0 +1,257 @@
+
+;################## Color Scheme ####################
+
+[colors]
+background = ${xrdb:background}
+background-alt = #444
+foreground = ${xrdb:foreground}
+foreground-alt = #555
+
+
+red         = ${xrdb:Polybar.color1}
+green       = ${xrdb:Polybar.color2}
+yellow      = ${xrdb:Polybar.color3}
+blue        = ${xrdb:Polybar.color4}
+magenta     = ${xrdb:Polybar.color5}
+cyan        = ${xrdb:Polybar.color6}
+white       = ${xrdb:Polybar.color7}
+
+; #################### Bar Left #########################
+
+[bar/left]
+width = 17%
+height = 27px
+offset-x = 39px 
+offset-y = 7px
+;radius = 1
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 2
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+font-0 =  Fira Code Nerd Font:pixelsize=8.7:style=Regular;1
+font-1 = Material Design Icons:pixelsize=11:style:Regular;1
+modules-left = launcher
+modules-center = date
+wm-restack = i3
+override-redirect = true
+cursor-click = pointer
+cursor-scroll = default
+bottom = true
+
+; ######################## Bar Center ########################
+
+[bar/center]
+width = 23%
+height = 27px
+offset-x = 39%
+offset-y = 7px
+;radius = 1
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 2
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+font-0 = Fira Code Nerd Font :pixelsize=8;1
+modules-left = terminal  
+modules-center = i3
+wm-restack = i3
+override-redirect = true
+cursor-click = pointer
+cursor-scroll = default
+bottom = true
+
+
+; ###################### Bar Right ########################
+
+[bar/right]
+width = 20%
+height = 27px
+offset-x = 77.9%:-10
+offset-y = 7px
+;radius = 1
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 1
+padding-right = 8
+module-margin-left = 0
+module-margin-right = 0
+font-0 = BreezeSans:pixelsize=13:style=Bold;-10
+font-1 =  Fira Code Nerd Font:pixelsize=9;1
+font-2 = Material Design Icons:pixelsize=11:style:Regular;1
+modules-right = cpu volume memory battery wl power-menu 
+wm-restack = i3
+override-redirect = true
+cursor-click = pointer
+cursor-scroll = default
+bottom = true
+
+
+;tray-position = right
+;tray-detached = true
+;tray-maxsize =13
+;tray-transparent = false
+;tray-background = #1A2026
+;tray-scale = 0.98
+
+
+
+
+
+;#################### Modules ####################
+
+[module/i3]
+
+type = internal/i3
+format = <label-state> <label-mode>
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+; focused = Active workspace on focused monitor
+label-focused = ""
+label-focused-padding = 1
+label-focused-font = 3
+
+; unfocused = Inactive workspace on any monitor
+;label-unfocused = ""
+label-unfocused = ""
+label-unfocused-padding = 1
+label-unfocused-font = 3
+
+; urgent = Workspace with urgency hint set
+label-urgent = ""
+label-urgent-foreground = ${colors.red}
+label-urgent-font = 3
+label-urgent-padding = 1
+
+[module/date]
+
+type = custom/script
+
+exec =  /home/eloy/Downloads/sc/date.sh
+interval = 1
+tail = true
+label-foreground = #00b3b3
+
+[module/power-menu]
+
+type = custom/script
+
+exec = echo "󰐥"
+format-foreground = #ff4d4d
+click-left = /home/eloy/Downloads/sc/powermenu.sh &
+
+
+
+[module/volume]
+
+type = internal/pulseaudio
+
+format = <label>
+
+label-volume = "󰎆 %{T2}%percentage%%%{T-}  "
+label-volume-foreground = #5cd6d6
+format-foreground = #5cd6d6
+
+label-muted = "󰎊  "
+label-muted-foreground = #607290
+
+
+[module/cpu]
+
+
+type = internal/cpu
+
+interval = 6
+format = <label>
+
+format-prefix = "󰍛 " 
+label = "%{T2}%percentage%%%{T2} "
+label-foreground =#5cd6d6
+format-foreground =#80ffaa
+
+
+[module/memory]
+
+type = internal/memory
+
+interval = 6
+format-prefix = "󰮯 "
+label = "%{T2}%percentage_used%%%{T-} " 
+label-foreground =#5cd6d6
+format-foreground =#ac3973
+
+
+[module/launcher]
+
+
+type = custom/text
+
+content = "%{T4}󰛝 %{T-}"
+content-background = ${colors.background}
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 2
+click-left = rofi -show drun -eh 2 -bw 0 &
+
+[module/battery]
+
+
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> %{T3}<label-charging>%{T-}
+
+format-discharging =<ramp-capacity> %{T3}<label-discharging>%{T-} 
+
+format-full = 󰂄%{T3}100%%{T-}
+format-full-foreground = #5cd6d6
+label-charging-foreground = #5cd6d6
+label-discharging-foreground = #5cd6d6
+
+animation-charging-0 = 󱊤
+animation-charging-1 = 󱊥
+animation-charging-2 = 󱊦
+animation-charging-foreground = #8cff66
+animation-charging-framerate = 900
+
+ramp-capacity-0 = %{F#ff004b}󰂃%{F-}
+ramp-capacity-1 = %{F#ff8000}󰁺%{F-}
+ramp-capacity-2 = %{F#ff8000}󰁻%{F-}
+ramp-capacity-3 = %{F#ff8000}󰁼%{F-}
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰂀
+ramp-capacity-8 = 󰂁
+ramp-capacity-9 = 󰂂
+ramp-capacity-10 = 󰁹 
+ramp-capacity-foreground = #ff8000
+ramp-capacity-framerate = 750
+
+[module/wl]
+
+
+type = custom/script
+exec = echo "  󰤢  "
+format-foreground = #6699ff
+click-left = /home/eloy/Downloads/sc/network.sh &
+
+
+
+
+
+
