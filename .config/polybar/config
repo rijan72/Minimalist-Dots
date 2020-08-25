@@ -1,4 +1,5 @@
 
+
 ;################## Color Scheme ####################
 
 [colors]
@@ -31,7 +32,7 @@ padding-left = 2
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-font-0 =  Fira Code Nerd Font:pixelsize=8.7:style=Regular;1
+font-0 =  Fira Code Nerd Font:pixelsize=8.7:style=Bold;1
 font-1 = Material Design Icons:pixelsize=11:style:Regular;1
 modules-left = launcher
 modules-center = date
@@ -142,14 +143,14 @@ type = custom/script
 exec =  /home/eloy/Downloads/sc/date.sh
 interval = 1
 tail = true
-label-foreground = #00b3b3
+label-foreground = #009966
 
 [module/power-menu]
 
 type = custom/script
 
 exec = echo "󰐥"
-format-foreground = #ff4d4d
+format-foreground = #b30000
 click-left = /home/eloy/Downloads/sc/powermenu.sh &
 
 
@@ -161,8 +162,8 @@ type = internal/pulseaudio
 format = <label>
 
 label-volume = "󰎆 %{T2}%percentage%%%{T-}  "
-label-volume-foreground = #5cd6d6
-format-foreground = #5cd6d6
+label-volume-foreground = #330066
+format-foreground = #330066
 
 label-muted = "󰎊  "
 label-muted-foreground = #607290
@@ -178,8 +179,8 @@ format = <label>
 
 format-prefix = "󰍛 " 
 label = "%{T2}%percentage%%%{T2} "
-label-foreground =#5cd6d6
-format-foreground =#80ffaa
+label-foreground =#330066
+format-foreground =#3333ff
 
 
 [module/memory]
@@ -189,7 +190,7 @@ type = internal/memory
 interval = 6
 format-prefix = "󰮯 "
 label = "%{T2}%percentage_used%%%{T-} " 
-label-foreground =#5cd6d6
+label-foreground =#330066
 format-foreground =#ac3973
 
 
@@ -200,7 +201,7 @@ type = custom/text
 
 content = "%{T4}󰛝 %{T-}"
 content-background = ${colors.background}
-content-foreground = ${colors.cyan}
+content-foreground = #263640
 content-padding = 1
 content-font = 2
 click-left = rofi -show drun -eh 2 -bw 0 &
@@ -218,14 +219,14 @@ format-charging = <animation-charging> %{T3}<label-charging>%{T-}
 format-discharging =<ramp-capacity> %{T3}<label-discharging>%{T-} 
 
 format-full = 󰂄%{T3}100%%{T-}
-format-full-foreground = #5cd6d6
-label-charging-foreground = #5cd6d6
-label-discharging-foreground = #5cd6d6
+format-full-foreground = #330066
+label-charging-foreground = #330066
+label-discharging-foreground = #330066
 
 animation-charging-0 = 󱊤
 animation-charging-1 = 󱊥
 animation-charging-2 = 󱊦
-animation-charging-foreground = #8cff66
+animation-charging-foreground = #00b359
 animation-charging-framerate = 900
 
 ramp-capacity-0 = %{F#ff004b}󰂃%{F-}
@@ -247,8 +248,15 @@ ramp-capacity-framerate = 750
 
 type = custom/script
 exec = echo "  󰤢  "
-format-foreground = #6699ff
+format-foreground = #008060
 click-left = /home/eloy/Downloads/sc/network.sh &
+
+
+
+
+
+
+
 
 
 
