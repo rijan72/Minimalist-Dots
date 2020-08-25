@@ -1,6 +1,6 @@
 * {
-    xbg:    #1D1F28;
-    xfg:    #9999ff;
+    xbg:    #D9D9D9;
+    xfg:    #263640;
     x0:     #282A36;
     x1:     #F37F97;
     x2:     #5ADECD;
@@ -18,8 +18,8 @@
     x14:    #3FDCEE;
     x15:    #FDFDFD;
     x16:    #00E6E6;
-    x17:    #99E6FF;
+    x17:    #263640;
     x18:    #4DFF4D;
-    x19:    #ff944d;
+    x19:    #A64DFF;
 
 }
