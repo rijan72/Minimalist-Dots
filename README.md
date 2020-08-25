@@ -13,7 +13,7 @@ Dotfiles For Customizing Linux :penguin:
 
 ## Preview
 
-![Screenshot](123.png)
+![Screenshot](https://github.com/Eloysheyin/Minimalist-Dots/blob/master/ScreenShot.png)
 
 
 
