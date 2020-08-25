@@ -1,28 +1,3 @@
-! ########## Colors ###########
-
-
-*background:	#1A2026
-*foreground:	#538CC6
-*cursorColor:	#FFC299
-*color0:	#3D4C5F
-*color1:	#985EFF
-*color2:	#A1EFD3
-*color3:	#F1FA8C
-*color4:	#FFCBB3
-*color5:	#FFCBB3
-*color6:	#87DFEB
-*color7:	#FF80FF
-*color8:	#56687E
-*color9:	#FFD1B3
-*color10:	#B3FFF0
-*color11:	#F1FF52
-*color12:	#24D1E7
-*color13:	#BD99FF
-*color14:	#FFB3B3
-*color15:	#92B6F4
-
-
-
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -34,17 +9,43 @@ Xft.lcdfilter: lcddefault
 xcursor.theme:            Vanilla-DMZ
 xscreensaver.fade:   false
 xscreensaver.unfade: false
-
-
-! ################ Urxvt Config ###################
-
-
+! ===== urxvt =====
 URxvt.scrollBar: off
+!URxvt.font: xft:SourceCodePro-Regular:size=9:minspace=False
 URxvt.font: xft:Fira Code Nerd Font:size=8:minspace=False,\
             xft:Symbola:size=11
 URxvt.letterSpace: 0
 URxvt.internalBorder:    22
 URxvt.imLocale: en_US.UTF-8
+URxvt.termName: xterm-256color
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! =======color scheme==========
+
+*background:	#d9d9d9
+*foreground:	#263640
+*cursorColor:	#3d3d29
+*color0:	#263640
+*color1:	#ca1243
+*color2:	#00a3cc
+*color3:	#cc5200
+*color4:	#5c5c8a
+*color5:	#9966ff
+*color6:	#0083be
+*color7:	#494b53
+*color8:	#263640
+*color9:	#ca1243
+*color10:	#00a3cc
+*color11:	#cc5200
+*color12:	#5c5c8a
+*color13:	#9966ff
+*color14:	#0083be
+*color15:	#494b53
+
+
+
 
 
 
